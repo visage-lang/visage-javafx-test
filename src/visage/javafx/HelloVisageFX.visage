@@ -29,10 +29,14 @@ package visage.javafx;
 
 import visage.animation.Interpolator;
 import visage.animation.Timeline;
+import visage.javafx.geometry.Rectangle2D;
 import visage.javafx.stage.Stage;
 import visage.javafx.scene.Group;
 import visage.javafx.scene.Scene;
 import visage.javafx.scene.control.Button;
+import visage.javafx.scene.image.Image;
+import visage.javafx.scene.image.ImageView;
+import visage.javafx.scene.shape.Rectangle;
 
 /**
  * @author Stephen Chin <steveonjava@gmail.com>
@@ -47,15 +51,31 @@ Stage {
     title: "Hello World"
     visible: true
     Scene {
-        width: 300
-        height: 250
-        fill: Color.LIGHTGREEN
+        width: 800
+        height: 650
+        fill: Color.LIGHTGREY
+        def sabiah = Image { url: "{__DIR__}400px-Turdus-rufiventris.jpg" }
         Group {
+            [
+            ImageView { sabiah }
             Button {
-                text: "Hello World"
+                text: "Hello World!"
                 layoutX: bind position
-                layoutY: 80
+                layoutY: bind 80 + position
             }
+            ImageView {
+                sabiah
+                fitWidth: 200
+                preserveRatio: true
+                layoutX: 400
+            }
+            ImageView {
+                sabiah
+                viewport: Rectangle2D {minX: 40 minY: 35 width: 100 height: 200}
+                layoutX: 600
+            }
+            Rectangle { x: 450 y: 350 width: 100 height: 50 arcWidth: 20 arcHeight: 10 }
+            ]
         }
     }
 }

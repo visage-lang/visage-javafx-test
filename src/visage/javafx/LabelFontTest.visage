@@ -41,7 +41,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.control.ContentDisplay;
 
 /**
- * @author William Antônio <william.a.siqueira@gmail.com>
+ * @author William AntÃ´nio <william.a.siqueira@gmail.com>
  */
 
 println(Font.families());

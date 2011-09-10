@@ -19,8 +19,7 @@
         <delete file="${jfx.deployment.dir}/README.TXT"/>
         <!-- hack end -->
 
-        <fxjar destfile="${jfx.deployment.dir}/${jfx.deployment.jar}"
-             applicationClass="${main.class}" >
+        <fxjar destfile="${jfx.deployment.dir}/${jfx.deployment.jar}">
             <fileset dir="${build.classes.dir}"/>
             <manifest>
               <attribute name="Implementation-Vendor" value="${application.vendor}"/>
@@ -34,9 +33,8 @@
                   outfile="${application.title}">
             <info title="${application.title}"
                   vendor="${application.vendor}"/>
-            <application name="${application.title}"
-                         appclass="${main.class}"/>
-            <resources type="eager">
+            <application name="${application.title}" mainclass="${main.class}" />
+            <resources>
                <fileset dir="${jfx.deployment.dir}">
                   <include name="${jfx.deployment.jar}"/>
                   <include name="lib/*.jar"/>

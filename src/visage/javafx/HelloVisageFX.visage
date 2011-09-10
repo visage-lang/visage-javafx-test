@@ -40,6 +40,7 @@ import visage.javafx.scene.shape.Rectangle;
 
 /**
  * @author Stephen Chin <steveonjava@gmail.com>
+ * @author Alain Béarez <A@cua.li>
  */
 var position = 100;
 
@@ -48,21 +49,15 @@ Timeline {
 }.play();
 
 Stage {
-    title: "Hello World"
-    visible: true
+    title: "Turdus rufiventris"
     Scene {
-        width: 800
-        height: 650
+        width: 700
+        height: 600
         fill: Color.LIGHTGREY
         def sabiah = Image { url: "{__DIR__}400px-Turdus-rufiventris.jpg" }
         Group {
             [
             ImageView { sabiah }
-            Button {
-                text: "Hello World!"
-                layoutX: bind position
-                layoutY: bind 80 + position
-            }
             ImageView {
                 sabiah
                 fitWidth: 200
@@ -71,10 +66,23 @@ Stage {
             }
             ImageView {
                 sabiah
-                viewport: Rectangle2D {minX: 40 minY: 35 width: 100 height: 200}
+                fitWidth: 200
+                preserveRatio: true
+                layoutX: 400
+                layoutY: 300
+                rotate: 180
+            }
+            ImageView {
+                sabiah
+                viewport: Rectangle2D { minX: 35 minY: 250 width: 100 height: 200 }
                 layoutX: 600
             }
-            Rectangle { x: 450 y: 350 width: 100 height: 50 arcWidth: 20 arcHeight: 10 }
+            Button {
+                text: "Hello World!"
+                layoutX: bind position
+                layoutY: bind 80 + position
+            }
+            Rectangle { x: 600 y: 350 width: 100 height: 50 arcWidth: 20 arcHeight: 10 }
             ]
         }
     }

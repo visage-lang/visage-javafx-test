@@ -58,7 +58,6 @@ function imgView():ImageView{
  
 Stage {
     title: "Testing Label And Font"
-    visible: true
     Scene {
         width: 220
         height: 200

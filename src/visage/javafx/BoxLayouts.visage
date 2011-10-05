@@ -40,6 +40,7 @@ import visage.javafx.scene.shape.Rectangle;
 
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
+import javafx.scene.input.MouseEvent;
 
 /**
  * @author Alain Béarez <A@cua.li>
@@ -59,18 +60,22 @@ Stage {
                 HBox { 
                     20
                     padding: Insets { left: 10 top: 10 bottom: 10 }
+                    def rotating :ImageView = ImageView {
+                        sabiah
+                        fitWidth: 180
+                        preserveRatio: true
+                        rotate: 180
+                        onMouseClicked: function(me :MouseEvent) :Void {
+                            rotating.rotate += 180
+                        }
+                    }
                     children: [
                         ImageView {
                             sabiah
                             fitWidth: 180
                             preserveRatio: true
                         }
-                        ImageView {
-                            sabiah
-                            fitWidth: 180
-                            preserveRatio: true
-                            rotate: 180
-                        }
+                        rotating,
                         ImageView {
                             sabiah
                             fitWidth: 180

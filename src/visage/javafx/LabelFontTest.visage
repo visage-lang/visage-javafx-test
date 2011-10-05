@@ -25,17 +25,17 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
+package visage.javafx;
 
-
-import visage.animation.Interpolator;
-import visage.animation.Timeline;
 import visage.javafx.stage.Stage;
 import visage.javafx.scene.Group;
 import visage.javafx.scene.Scene;
 import visage.javafx.scene.control.Label;
-import javafx.geometry.Pos;
-import visage.javafx.scene.image.*;
+import visage.javafx.scene.image.Image;
+import visage.javafx.scene.image.ImageView;
 import visage.javafx.scene.text.Font;
+
+import javafx.geometry.Pos;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.control.ContentDisplay;
@@ -47,7 +47,6 @@ import javafx.scene.control.ContentDisplay;
 println(Font.families());
 println(Font.fontNames());
 var img = Image{url: "http://www.celgeek.com.br/wp-content/uploads/2011/05/javafx_logo_color_1.jpg"}
-
     
 function imgView():ImageView{
     ImageView{
@@ -55,14 +54,14 @@ function imgView():ImageView{
         image: img
     }
 }
- 
+
 Stage {
     title: "Testing Label And Font"
     Scene {
         width: 220
         height: 200
         fill: Color.LIGHTBLUE
-		Group{
+	Group{
             [
                 Label{
                     text: "Simple Label with Graphics"
@@ -108,7 +107,6 @@ Stage {
                     font: Font.font("Verdana",FontWeight.BOLD, FontPosture.ITALIC, 10);
                 }                         
             ]
-		}
-		
+	}
     }
 }

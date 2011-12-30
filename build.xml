@@ -104,7 +104,7 @@
     </target>
     
     <target depends="init,compile" description="Run the Visage main class." name="run">
-        <exec executable="${visagehome}/bin/visage${binary.extension}" failonerror="true" logerror="true">
+        <exec executable="${visagehome}/bin/visage${binary.extension}" failonerror="true" logerror="true" resolveexecutable="true">
             <arg value="-cp"/>
             <arg path="${build.classes.dir}:${javac.classpath}:${endorsed.classpath}"/>
             <arg line="${main.class}"/>
